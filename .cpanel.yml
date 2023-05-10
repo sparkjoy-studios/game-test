@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/gametesttrade4ms/public_html/
-    - /bin/cp -R deployment $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
