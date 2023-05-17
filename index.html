@@ -921,7 +921,7 @@ tbody tr:hover {background-color: #D6EEEE;}
     	&lt;td&gt;(if: $Customs is &quot;Broker&quot;)
 [$SelectButtonFormat[ &#39;&#39;Broker&#39;&#39;  ] ]
 (else: )
-[(link: &quot;Hire a customers broker to handle customs procedures&quot;)[(set: $Customs to &quot;Broker&quot;)(rerun: ?passage)]]&lt;/td&gt;
+[(link: &quot;Hire a customs broker to handle customs procedures&quot;)[(set: $Customs to &quot;Broker&quot;)(rerun: ?passage)]]&lt;/td&gt;
         &lt;td&gt;_Cost2&lt;/td&gt;
         &lt;td&gt;_TimeCost2&lt;/td&gt;
     &lt;/tr&gt;
@@ -998,7 +998,7 @@ tbody tr:hover {background-color: #D6EEEE;}
     	&lt;td&gt;(if: $Customs is &quot;Broker&quot;)
 [$SelectButtonFormat[ &#39;&#39;Broker&#39;&#39;  ] ]
 (else: )
-[(link: &quot;Hire a customers broker to handle customs procedures&quot;)[(set: $Customs to &quot;Broker&quot;)(rerun: ?passage)]]&lt;/td&gt;
+[(link: &quot;Hire a customs broker to handle customs procedures&quot;)[(set: $Customs to &quot;Broker&quot;)(rerun: ?passage)]]&lt;/td&gt;
         &lt;td&gt;_Cost2&lt;/td&gt;
         &lt;td&gt;_TimeCost2&lt;/td&gt;
     &lt;/tr&gt;
@@ -1075,7 +1075,7 @@ tbody tr:hover {background-color: #D6EEEE;}
     	&lt;td&gt;(if: $Customs is &quot;Broker&quot;)
 [$SelectButtonFormat[ &#39;&#39;Broker&#39;&#39;  ] ]
 (else: )
-[(link: &quot;Hire a customers broker to handle customs procedures&quot;)[(set: $Customs to &quot;Broker&quot;)(rerun: ?passage)]]&lt;/td&gt;
+[(link: &quot;Hire a customs broker to handle customs procedures&quot;)[(set: $Customs to &quot;Broker&quot;)(rerun: ?passage)]]&lt;/td&gt;
         &lt;td&gt;_Cost2&lt;/td&gt;
         &lt;td&gt;_TimeCost2&lt;/td&gt;
     &lt;/tr&gt;
@@ -1463,20 +1463,58 @@ tbody tr:hover {background-color: #D6EEEE;}
 
 (if:$Contract is &quot;Account&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 230)(set:num-type _Cost2 to 0)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 1)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;Fundraising&quot;)]
 
-(if:$Contract is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Financial Instrument&quot;)]</tw-passagedata><tw-passagedata pid="17" name="First Feedback" tags="Help" position="400,1125" size="100,100">(set:$Customs to &quot;Training&quot;) 
+(if:$Contract is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Financial Instrument&quot;)]</tw-passagedata><tw-passagedata pid="17" name="First Feedback" tags="Help" position="425,1125" size="100,100">&lt;!--(set:$Customs to &quot;Training&quot;) (set:$Registration to &quot;NoRegistration&quot;)(set:$Marketing to &quot;TPA&quot;)(set:$Standards to &quot;Implement&quot;)--&gt;
 {(if:$Time is not 0)[All your pre-export preparations are complete. In- total, your export readiness activities took $Time days.  Make sure to watch your time as you continue to ensure you are able to deliver your product to your customer as quickly as possible. Here is some feedback on your responses thus far.]
 (if:$Time is 0)[All your pre-export preparations are complete. Your export readiness activities did not take any time.  Make sure to watch your time as you continue to ensure you are able to deliver your product to your customer as quickly as possible. Here is some feedback on your responses thus far.]}
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Customs Option]\
 For the customs option, you selected: (if:$Customs is &quot;Training&quot;)[(text-colour:red)[&#39;&#39;Undertake training on customs and border procedures.&#39;&#39;]
-](if:$Customs is &quot;Broker&quot;)[&#39;&#39;Hire a customers broker to handle customs procedures.
-&#39;&#39;](if:$Customs is &quot;Research&quot;)[&#39;&#39;Independently research customs and border procedures on the internet.&#39;&#39;
-]\
+](if:$Customs is &quot;Broker&quot;)[(text-colour:red)[&#39;&#39;Hire a customers broker to handle customs procedures.
+&#39;&#39;]](if:$Customs is &quot;Research&quot;)[(text-colour:red)[&#39;&#39;Independently research customs and border procedures on the internet.&#39;&#39;
+]]\
 
 Undertaking training on customs and border procedures is a good move as it helps you navigate the complexities of international trade and required documents.
 
 Hiring a customs broker to handle customs procedures is a good move because it saves time, reduces risk of errors, and ensures compliance with regulations.
 
-Conducting independent research can be a cost-effective method for finding information about customs procedures. However, the procedure can be complicated without any help. While there is no harm to selecting this option, you alone are responsible for demonstrating customs compliance.</tw-passagedata><tw-passagedata pid="18" name="Fundraising" tags="2-Point-of-Export Finance" position="1100,550" size="100,100">(set: num-type _Cost1 to 0)(set:_Cost2 to &quot;5%&quot;)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 0)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 1)(set: $InterestRate to 14)(if:$Contract is &quot;Letter&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[
+Conducting independent research can be a cost-effective method for finding information about customs procedures. However, the procedure can be complicated without any help. While there is no harm to selecting this option, you alone are responsible for demonstrating customs compliance.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Voluntary Standards]\
+For the voluntary standard options, you selected: (if:$Standards is &quot;Implement&quot;)[(text-colour:red)[&#39;&#39;Research and implement voluntary standards.&#39;&#39;]
+](if:$Standards is &quot;Packaging&quot;)[(text-colour:red)[&#39;&#39;Package your product in 100% recycled materials.
+&#39;&#39;]](if:$Standards is &quot;NoStandard&quot;)[(text-colour:red)[&#39;&#39;Not implement voluntary standards.&#39;&#39;
+]]\
+
+Implementing voluntary sustainability standards is a good choice since it can provide access to new markets, increase export opportunities, and enhance competitiveness.
+
+Packaging product in recycled materials may or may not increase profits. The effectiveness depends on the level of adoption to the concept of sustainability.
+
+Not implementing voluntary standards will not stop you from exporting , but your products may have less market competiveness in certain countries.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Business Registration]\
+For the business registration options, you selected: (if:$Registration is &quot;Local&quot;)[(text-colour:red)[&#39;&#39;Register with your national government.&#39;&#39;]
+](if:$Registration is &quot;NoRegistration&quot;)[(text-colour:red)[&#39;&#39;Do not register with any organization.&#39;&#39;
+]](if:$Registration is &quot;LEI&quot;)[(text-colour:red)[&#39;&#39;Obtain a global business registration.&#39;&#39;]]\
+
+Registering your business with the national government allows you to obtain the necessary licenses and permits required. 
+
+Obtaining a global business registration-Legal Entity Identifier (LEI) is the best option. You can gain international recognition and credibility with investors, customers, and other stakeholders that need LEI data to optimize business procedures for market transactions.
+
+Not registering your business can have several disadvantages, such as legal penalties, difficulties in obtaining loans and credit, limitations on business activities, and lack of credibility with customers and suppliers.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Marketing]\
+For the marketing options, you selected: (if:$Marketing is &quot;TPA&quot;)[(text-colour:red)[&#39;&#39;Contact your trade promotion agency.&#39;&#39;]
+](if:$Marketing is &quot;Website&quot;)[(text-colour:red)[&#39;&#39;Create your own website.
+&#39;&#39;]](if:$Marketing is &quot;eCommerce&quot;)[(text-colour:red)[&#39;&#39;Join an eCommerce marketplace.&#39;&#39;
+]]\
+
+The trade promotion agency conducts export promotion activities by providing information, linkages, technical advice, marketing and policy advocacy for enterprise to help you find customers faster.
+
+E-commerce can promote online sales and find more customers. You can use the e-commerce readiness assessment tool to evaluate business capabilities to engage in e-commerce activities and sell online. But it can be costly to use a third-party platform.
+
+A well-designed business website can attract potential customers and provide them with important information such as product features, pricing, and shipping information.
+
+{[$NextButtonFormat[Next Step]
+(click-goto:&quot;Next Step&quot;, &#39;Ready to Export&#39;)]}</tw-passagedata><tw-passagedata pid="18" name="Fundraising" tags="2-Point-of-Export Finance" position="1100,550" size="100,100">(set: num-type _Cost1 to 0)(set:_Cost2 to &quot;5%&quot;)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 0)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 1)(set: $InterestRate to 14)(if:$Contract is &quot;Letter&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[
 (append: ?SideBar)[
 (align:&quot;&lt;==&quot;)+(box:&quot;X&quot;)+(corner-radius:12)+(background:white)+(opacity:0.9)[&#39;&#39;Export Market:&#39;&#39; $ExportCountry
 &#39;&#39;Product:&#39;&#39; $Product
@@ -1958,23 +1996,21 @@ $NextButtonFormat[Next Step ]
 (click-goto:&quot;Next Step&quot;, &#39;HSCodeIntro&#39;)</tw-passagedata><tw-passagedata pid="20" name="Game Over" tags="Intro/Outro" position="1325,50" size="100,100">(replace:?sidebar)[(forget-undos:-1)](align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=X=&quot;)+(text-size:2)+(css:&quot;padding: 0.3em;&quot;)+(text-style:&quot;fade-in-out&quot;,&quot;bold&quot;)[Game Over]
 
 (if: $Funds &lt; 0)+(if: $Time &lt; 45 )[Unfortunately, you do not have sufficient funds to complete your export. 
-(if:$Finance is &quot;NoFinance&quot;)[You did not choose any financing method.  It could be helpful if you have seeked out some trade financing methods.]
-(if:$Finance is &quot;Prepay&quot;)[For financing method, you asked the customer to prepay.  It could be more helpful if you have seeked out some bank loan.]]
-
+(if:$Finance is &quot;NoFinance&quot;)[You did not choose any financing method.  It could be helpful if you have seeked out some trade financing methods.]\
+(if:$Finance is &quot;Prepay&quot;)[For financing method, you asked the customer to prepay.  It could be more helpful if you have seeked out some bank loan.]]\
 (if: $Funds &gt; 0)+(if: $Time &gt; 45 )[Unfortunately, you ran out of time. Your customer refused to wait for longer and cancelled the order.
-(if:$Customs is &quot;Research&quot;)[It would be helpful if you have hired a customs broker or undertake training in processing custom procedures.]]
-
-
-(if: $Time &gt; 45 and $Funds &lt; 0)[Unfortunately, you ran out of money and time.(if:$Finance is &quot;NoFinance&quot;)[You did not choose any financing method. It would be helpful if you have seeked out some trade financing methods.]
-(if:$Customs is &quot;Research&quot;)[ It would also be helpful if you have hired a customs broker or undertake training in processing custom procedures.]
-(if: $Conveyance is &quot;Sea&quot;)[You chose the slowest conveyance method. Maybe secure more funds to choose a faster one.]]
+(if:$Customs is &quot;Research&quot;)[It would be helpful if you have hired a customs broker or undertake training in processing custom procedures.]]\
+(if: $Time &gt; 45 and $Funds &lt; 0)[Unfortunately, you ran out of money and time.(if:$Finance is &quot;NoFinance&quot;)[You did not choose any financing method. It would be helpful if you have seeked out some trade financing methods.]\
+(if:$Customs is &quot;Research&quot;)[ It would also be helpful if you have hired a customs broker or undertake training in processing custom procedures.]\
+(if: $Conveyance is &quot;Sea&quot;)[You chose the slowest conveyance method. Maybe secure more funds to choose a faster one.]]\
+(if:$Registration is &quot;NoRegistration&quot;)+(if:$Product is $StoredFoodProduct and $ImportCountry is &quot;Sarvahara&quot;)[Sarvahara require a business to register before exporting food! ]\
 
 $NextButtonFormat[Restart](click:&quot;Restart&quot;)[(restart:)]
 
 &lt;a class=&quot;twitter-share-button&quot;
   href=&quot;https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20trade%20game%20from%20@WTO%20and%20@IOExport%20https://game.trade4msmes.org/&quot;
  hashtags=&quot;tradegame&quot;&gt; 
-Loving the game? Share on Tweet! &lt;/a&gt;
+Loving the game? Share it! &lt;/a&gt;
 
 &lt;!-- AddToAny BEGIN --&gt;
 &lt;div&gt;
@@ -2125,6 +2161,8 @@ Once you have found the correct 6-digit HS code, make sure to write it down.&quo
 
 &#39;&#39;No registration :&#39;&#39; Not registering your business can have several disadvantages, such as legal penalties, difficulties in obtaining loans and credit, limitations on business activities, and lack of credibility with customers and suppliers.
 
+(If you are exporting to Sarvarhara, registration is a must!)
+
 [$NextButtonFormat[Back]
 (click-goto:&quot;Back&quot;, &#39;Business Registration&#39;)]</tw-passagedata><tw-passagedata pid="26" name="Help Conveyance" tags="Help" position="1225,1050" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[How to choose a conveyance method?]\
 
@@ -2246,9 +2284,9 @@ In reality, you may also use &#39;&#39; &lt;a href=&quot;https://m.macmap.org/&q
 * &#39;&#39;Luminaria&#39;&#39; has a well-regulated business environment and more food safety regulations regarding food products. For example, it has an import prohibition rule for agricultural products from Kujuma. Also, there are more mandatory documents to fill out if an exporter wants to get the product across the border.
 
 [$NextButtonFormat[Back]
-(click-goto:&quot;Back&quot;, &#39;Market Selection&#39;)]</tw-passagedata><tw-passagedata pid="35" name="Help Marketing" tags="Help" position="550,1000" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[How should I marketing my product?]\
+(click-goto:&quot;Back&quot;, &#39;Market Selection&#39;)]</tw-passagedata><tw-passagedata pid="35" name="Help Marketing" tags="Help" position="550,1000" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[How should I market my product?]\
 
-&#39;&#39;Trade promotion agency:&#39;&#39;A TPA conducts export promotion activities by providing information, linkages, technical advice, marketing and policy advocacy for enterprises. These useful infomation can help you find customers faster.
+&#39;&#39;Trade promotion agency (TPA):&#39;&#39;A TPA conducts export promotion activities by providing information, linkages, technical advice, marketing and policy advocacy for enterprises. These useful infomation can help you find customers faster.
 
 &#39;&#39;E-commerce:&#39;&#39;E-commerce can promote online sales and find more customers. You can use the e-commerce readiness assessment tool to evaluate business capabilities to engage in e-commerce activities and sell online. But it can be costly to use a third-party platform.
 
@@ -2562,13 +2600,13 @@ th, td {
 &lt;/table&gt;]\
 
 {[$NextButtonFormat[Next Step]
-(click-goto:&quot;Next Step&quot;, &#39;Ready to Import&#39;)]
+(click-goto:&quot;Next Step&quot;, &#39;Insurance Cost&#39;)]
 (if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]
-(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Insurance Cost&#39;)]]}</tw-passagedata><tw-passagedata pid="42" name="Insurance Cost" tags="2-Point-of-Export" position="1000,1300" size="100,100">(if:$Insurance is &quot;Insurance&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: $Funds to ($Funds - 20))(goto: &quot;Ready to Import&quot;)]
-(if:$Insurance is &quot;Insurance&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: $Funds to ($Funds - 100))(goto: &quot;Ready to Import&quot;)]
-(if:$Insurance is &quot;Insurance&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: $Funds to ($Funds - 1000))(goto: &quot;Ready to Import&quot;)]
+(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Insurance Cost&#39;)]]}</tw-passagedata><tw-passagedata pid="42" name="Insurance Cost" tags="2-Point-of-Export" position="1000,1300" size="100,100">(if:$Insurance is &quot;Insurance&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: $Funds to ($Funds - 20))(goto: &quot;Second Feedback&quot;)]
+(if:$Insurance is &quot;Insurance&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: $Funds to ($Funds - 100))(goto: &quot;Second Feedback&quot;)]
+(if:$Insurance is &quot;Insurance&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: $Funds to ($Funds - 1000))(goto: &quot;Second Feedback&quot;)]
 
-(if:$Insurance is  &quot;NoInsurance&quot;)[(goto: &quot;Ready to Import&quot;)]
+(if:$Insurance is  &quot;NoInsurance&quot;)[(goto: &quot;Second Feedback&quot;)]
 
 (if:$Insurance is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Insurance Choice&quot;)]
 (if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]</tw-passagedata><tw-passagedata pid="43" name="Intro" tags="Intro/Outro" position="125,100" size="100,100">{(set:$NextButtonFormat to (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=X=&quot;)+(text-color:white)+(b4r:&quot;solid&quot;)+(corner-radius:18)+(css:&quot;position: relative;&quot;)+(background: #00204a))
@@ -2585,7 +2623,7 @@ $NextButtonFormat[Start Now]\
 &lt;img border=&quot;0&quot; alt=&quot;IOE&amp;IT&quot; src=&quot;https://cdn.ymaws.com/www.export.org.uk/graphics/logo.png&quot; width=&quot;250&quot; height=&quot;100&quot;&gt;]\
 ==|
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XX=&quot;)[&lt;/a&gt;&lt;a href=&quot;https://www.wto.org/english/tratop_e/msmes_e/msmes_e.htm&quot; target=&quot;_blank&quot;&gt;
-&lt;img border=&quot;0&quot; alt=&quot;WTO&quot; src=&quot;https://t4.sparkjoy.com/wp-content/uploads/2023/05/MicrosoftTeams-image.png&quot; width=&quot;250&quot; height=&quot;180&quot;&gt;&lt;/a&gt;]\</tw-passagedata><tw-passagedata pid="44" name="Mandatory Compliances" tags="2-Point-of-Export Compliance" position="1100,1175" size="100,100">{&lt;style&gt;
+&lt;img border=&quot;0&quot; alt=&quot;WTO&quot; src=&quot;https://t4.sparkjoy.com/wp-content/uploads/2023/05/MSMEs_WTO_Logo_Vector_E-300x212-1-e1684265407153.png&quot; width=&quot;250&quot; height=&quot;180&quot;&gt;&lt;/a&gt;]</tw-passagedata><tw-passagedata pid="44" name="Mandatory Compliances" tags="2-Point-of-Export Compliance" position="1100,1175" size="100,100">{&lt;style&gt;
 input {
 display: none;
 }
@@ -2919,7 +2957,6 @@ The administrative fees to file these documents cost $2500 which will be deducte
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;I have picked all that I need!&#39;)]
-(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help&#39;)]]
 (if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="45" name="Market Selection" tags="1-Export-Readiness Intro/Outro" position="400,400" size="100,100">{(if:$Product is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Product Selection&quot;)](if: $Product is $TextileProduct2 or $StoredFoodProduct2 or $StoredFoodProduct3 or $TextileProduct3)[(alert:&quot;$ExportCountry does not have enough capacity to produce $Product. Please go back and select again.&quot;)(goto: &quot;Product Selection&quot;)]}(if:$ExportCountry is &quot;Kujuma&quot; and $Product is &quot;Cashew Nuts&quot;)[
 Using available online tools, you have determined that there is untapped export potential in Luminaria and Sarvahara. Kujuma has a free trade agreement (FTA) in place with both countries so your exports of $Product can enter duty-free. 
 
@@ -3104,7 +3141,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Import Prohibition&#39;)]
-(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Market Selection&#39;)]]}</tw-passagedata><tw-passagedata pid="46" name="Marketing" tags="1-Export-Readiness Marketing" position="400,1000" size="100,100">(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(if:$ExportCountry is &quot;Kujuma&quot;)[(append: ?SideBar)[
+(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Market Selection&#39;)]]}</tw-passagedata><tw-passagedata pid="46" name="Marketing" tags="1-Export-Readiness Marketing" position="425,1000" size="100,100">(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(if:$ExportCountry is &quot;Kujuma&quot;)[(append: ?SideBar)[
 (align:&quot;&lt;==&quot;)+(box:&quot;X&quot;)+(corner-radius:12)+(background:white)+(opacity:0.9)[&#39;&#39;Export Market:&#39;&#39; $ExportCountry
 &#39;&#39;Product:&#39;&#39; $Product
 &#39;&#39;Import Market:&#39;&#39; $ImportCountry
@@ -3329,23 +3366,23 @@ tbody tr:hover {background-color: #D6EEEE;}
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Marketing Cost&#39;)]
-(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Marketing&#39;)]]}</tw-passagedata><tw-passagedata pid="47" name="Marketing Cost" tags="1-Export-Readiness" position="300,400" size="100,100">(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Ready to Export&quot;)]
+(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Marketing&#39;)]]}</tw-passagedata><tw-passagedata pid="47" name="Marketing Cost" tags="1-Export-Readiness" position="300,1000" size="100,100">(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 11)(set:num-type _Cost2 to 11)(set:num-type _Cost3 to 16)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 11)(set:num-type _Cost2 to 11)(set:num-type _Cost3 to 16)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 95)(set:num-type _Cost2 to 95)(set:num-type _Cost3 to 149)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 95)(set:num-type _Cost2 to 95)(set:num-type _Cost3 to 149)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;Website&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;Website&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;Website&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 11)(set:num-type _Cost2 to 11)(set:num-type _Cost3 to 16)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;Website&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 11)(set:num-type _Cost2 to 11)(set:num-type _Cost3 to 16)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;Website&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 95)(set:num-type _Cost2 to 95)(set:num-type _Cost3 to 149)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;Website&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 95)(set:num-type _Cost2 to 95)(set:num-type _Cost3 to 149)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;eCommerce&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;eCommerce&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;eCommerce&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 11)(set:num-type _Cost2 to 11)(set:num-type _Cost3 to 16)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;eCommerce&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 11)(set:num-type _Cost2 to 11)(set:num-type _Cost3 to 16)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;First Feedback&quot;)]
 
-(if:$Marketing is &quot;eCommerce&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 95)(set:num-type _Cost2 to 95)(set:num-type _Cost3 to 149)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;Ready to Export&quot;)]
+(if:$Marketing is &quot;eCommerce&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 95)(set:num-type _Cost2 to 95)(set:num-type _Cost3 to 149)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;First Feedback&quot;)]
 
 (if:$Marketing is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Marketing&quot;)]</tw-passagedata><tw-passagedata pid="48" name="Play" tags="Intro/Outro" position="400,100" size="100,100">Welcome to the Trade Game!
 
@@ -3423,7 +3460,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Product Selection&#39;)]
-(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Country Selection&#39;)]]}</tw-passagedata><tw-passagedata pid="49" name="Point Converter" tags="Summary" position="1500,1475" size="100,100">{(set: num-type $point to 0 )[
+(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Country Selection&#39;)]]}</tw-passagedata><tw-passagedata pid="49" name="Point Converter" tags="Summary" position="1500,1450" size="100,100">{(set: num-type $point to 0 )[
 (if: $Customs is &quot;Training&quot;) [(set: $point to $point + 3 )]
 (if: $Customs is &quot;Broker&quot;) [(set: $point to $point + 2 )]
 (if: $Customs is &quot;Research&quot;)  [(set: $point to $point + 3 )]
@@ -3700,7 +3737,57 @@ Now that you have received payment from your customer, you need to repay your lo
 (if:$Finance is &quot;Prepay&quot; )[You delivered the product to your customer and the customer paid you all of the remaining amount of  $(print:$Revenue - $PrepayDisbursement).]\
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Summary&#39;)]}
-(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]</tw-passagedata><tw-passagedata pid="55" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]</tw-passagedata><tw-passagedata pid="55" name="Second Feedback" tags="Help" position="1100,1425" size="100,100">&lt;!--(set:$Contract to &quot;Promissory&quot;)(set:$Conveyance to &quot;Land&quot;)(set:$Finance to &quot;Loan&quot;)(set:$Insurance to &quot;Insurance&quot;)--&gt;
+Your product is about to leave $ExportCountry to be sent to $ImportCountry! Here is some feedback on your responses so far.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Financial Instrument]\
+For the financial instrument options, you selected: (if:$Contract is &quot;Letter&quot;)[(text-colour:red)[&#39;&#39;Letter of credit.&#39;&#39;]
+](if:$Contract is &quot;Promissory&quot;)[(text-colour:red)[&#39;&#39;Promissory note.
+&#39;&#39;]](if:$Contract is &quot;Account&quot;)[(text-colour:red)[&#39;&#39;Open account.&#39;&#39;
+]]\
+
+Letter of credit is a good choice as it can mitigate the risk of non-payment and ensure a smooth transaction between the buyer and the seller.
+
+Promissory note is a good choiceas since it serves as a guarantee to the seller if the buyer fails to make the payment.
+
+Open account may have some risk if trading partners do not have a good credit history with each other.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Financing&amp;fundraising]\
+For the financing&amp;fundraising options, you selected: (if:$Finance is &quot;Loan&quot;)[(text-colour:red)[&#39;&#39;Request a loan from a bank.&#39;&#39;]
+](if:$Finance is &quot;Prepay&quot;)[(text-colour:red)[&#39;&#39;Ask your customer to pre-pay.
+&#39;&#39;]](if:$Finance is &quot;NoFinance&quot;)[(text-colour:red)[&#39;&#39;Continue with current funding.&#39;&#39;
+]]\
+
+Getting a bank loan is a good idea, but you need to consider interests rates and the ability to repay.
+
+Asking for prepayment from customers can be a potential obstacle to securing sales, as customers may be reluctant to pay upfront before they have received the goods.
+
+Not considering financing can be risky as there may be some unexpected fees occur during exporting.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Conveyance]\
+For the conveyance options, you selected: (if:$Conveyance is &quot;Air&quot;)[(text-colour:red)[&#39;&#39;Air Freight.&#39;&#39;]
+](if:$Conveyance is &quot;Sea&quot;)[(text-colour:red)[&#39;&#39;Sea Freight.
+&#39;&#39;]](if:$Conveyance is &quot;Land&quot;)[(text-colour:red)[&#39;&#39;Overland Transport&#39;&#39;
+]]\
+
+
+Sea freight is the way the largest volume of goods is shipped around the world. Traders need to be aware of potential port charges, terminal charges, or adjustment factors such as for fuel or currency, as these can increase costs. 
+
+Road transportation is a very flexible mode of transportation, but there are increased risks of transportation-related damage to goods because of shocks during movement. Most importantly, it only serve destinations with sufficient infrastructure. 
+
+Air freigh tis the fastest, but also the most expensive, form of transportation, normally for small or perishable shipments and luxury items.
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXX==&quot;)+(text-style:&quot;bold&quot;)[Insurance]\
+For the insurance options, you selected: (if:$Insurance is &quot;Insurance&quot;)[(text-colour:red)[&#39;&#39;Buy insurance.&#39;&#39;]
+](if:$Insurance is  &quot;NoInsurance&quot;)[(text-colour:red)[&#39;&#39;Not buy insurance.
+&#39;&#39;]]\
+
+Buying insurance can be very helpful since there might be risks with transaction and other unexpected incidents.
+
+{[$NextButtonFormat[Next Step]
+(click-goto:&quot;Next Step&quot;, &#39;Ready to Import&#39;)]
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]
+(box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Insurance Cost&#39;)]]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]
 			Can you navigate the complexities of international trade to successfully export a product on time and within budget?
 
 
@@ -3710,7 +3797,7 @@ Now that you have received payment from your customer, you need to repay your lo
 Click the button below to learn firsthand about this process and start your exporting journey.
 
 [$NextButtonFormat[Next Step]
-(click-goto:&quot;Next Step&quot;, &#39;Play&#39;)]</tw-passagedata><tw-passagedata pid="56" name="Summary" tags="Summary" position="1500,1350" size="100,100">(if:$ExportCountry is &quot;Kujuma&quot;)[
+(click-goto:&quot;Next Step&quot;, &#39;Play&#39;)]</tw-passagedata><tw-passagedata pid="57" name="Summary" tags="Summary" position="1500,1325" size="100,100">(if:$ExportCountry is &quot;Kujuma&quot;)[
 (append: ?SideBar)[\
 (align:&quot;&lt;==&quot;)+(box:&quot;X&quot;)+(corner-radius:12)+(background:white)+(opacity:0.9)[&#39;&#39;Export Market:&#39;&#39; $ExportCountry
 &#39;&#39;Product:&#39;&#39; $Product
@@ -3765,7 +3852,7 @@ It was a responsible idea to use recycled packaging, but unfortunately there is 
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Point Converter&#39;)]
-(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="57" name="VSS Cost" tags="1-Export-Readiness" position="300,700" size="100,100">(if:$Standards is &quot;Implement&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 4)(set:num-type _Cost2 to 2)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 20)(set:num-type _TimeCost3 to 10)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Business Registration&quot;)]
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="58" name="VSS Cost" tags="1-Export-Readiness" position="300,700" size="100,100">(if:$Standards is &quot;Implement&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 4)(set:num-type _Cost2 to 2)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 20)(set:num-type _TimeCost3 to 10)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Business Registration&quot;)]
 
 (if:$Standards is &quot;Implement&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 18)(set:num-type _Cost2 to 9)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Business Registration&quot;)]
 
@@ -3776,9 +3863,9 @@ It was a responsible idea to use recycled packaging, but unfortunately there is 
 
 (if:$Standards is &quot;Packaging&quot;)+(if:$ExportCountry is &quot;Sarvahara&quot;)[(set: num-type _Cost1 to 18)(set:num-type _Cost2 to 9)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))]
 
-(if:$Standards is &quot;Packaging&quot;)+(if:$ImportCountry is &quot;Luminaria&quot;)[(alert:&quot;Customers in $ImportCountry will appreciate the sustainable approach to packaging.&quot;)(goto: &quot;Business Registration&quot;)]
+(if:$Standards is &quot;Packaging&quot;)+(if:$ImportCountry is &quot;Luminaria&quot;)[(goto: &quot;Business Registration&quot;)]
 
-(if:$Standards is &quot;Packaging&quot;)+(if:$ImportCountry is not &quot;Luminaria&quot;)[(alert:&quot;Customers in $ImportCountry values the quality of packaging more than its sustainability.&quot;)(goto: &quot;Business Registration&quot;)]
+(if:$Standards is &quot;Packaging&quot;)+(if:$ImportCountry is not &quot;Luminaria&quot;)[(goto: &quot;Business Registration&quot;)]
 
 (if:$Standards is &quot;Packaging&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 180)(set:num-type _Cost2 to 80)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost2))(set: $Funds to ($Funds - _Cost2))(goto: &quot;Business Registration&quot;)]
 
@@ -3789,7 +3876,7 @@ It was a responsible idea to use recycled packaging, but unfortunately there is 
 
 (if:$Standards is &quot;NoStandard&quot;)+(if:$ExportCountry is &quot;Luminaria&quot;)[(set: num-type _Cost1 to 180)(set:num-type _Cost2 to 80)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost3))(set: $Funds to ($Funds - _Cost3))(goto: &quot;Business Registration&quot;)]
 
-(if:$Standards is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Voluntary Standards&quot;)]</tw-passagedata><tw-passagedata pid="58" name="Voluntary Standards" tags="1-Export-Readiness Standards" position="400,700" size="100,100">(set: num-type _Cost1 to 4)(set:num-type _Cost2 to 2)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 0)(if:$ExportCountry is &quot;Kujuma&quot;)[
+(if:$Standards is 0)[(alert:&quot;Please choose an answer before continuing to the next question.&quot;)(goto: &quot;Voluntary Standards&quot;)]</tw-passagedata><tw-passagedata pid="59" name="Voluntary Standards" tags="1-Export-Readiness Standards" position="400,700" size="100,100">(set: num-type _Cost1 to 4)(set:num-type _Cost2 to 2)(set:num-type _Cost3 to 0)(set:num-type _TimeCost1 to 2)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 0)(if:$ExportCountry is &quot;Kujuma&quot;)[
 (append: ?SideBar)[
 (align:&quot;&lt;==&quot;)+(box:&quot;X&quot;)+(corner-radius:12)+(background:white)+(opacity:0.9)[&#39;&#39;Export Market:&#39;&#39; $ExportCountry
 &#39;&#39;Product:&#39;&#39; $Product
