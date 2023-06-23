@@ -137,7 +137,22 @@ tw-story[tags~="Summary"] {background-image:url("https://i.guim.co.uk/img/media/
 
 tw-story[tags~="Help"] {background-image:url("https://www.linkpicture.com/q/3872532-1.jpg");
   background-size: 100%
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Intro/Outro" color="blue"></tw-tag><tw-tag name="1-Export-Readiness" color="red"></tw-tag><tw-tag name="2-Point-of-Export" color="orange"></tw-tag><tw-tag name="3-Point-of-Import" color="green"></tw-tag><tw-passagedata pid="1" name="Alt Market Selection" tags="1-Export-Readiness Intro/Outro" position="125,550" size="100,100">[
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Function to replace <br> tags with <tw-consecutive-br></tw-consecutive-br>
+function replaceLineBreaks() {
+  var passages = document.querySelectorAll('tw-passage');
+
+  passages.forEach(function(passage) {
+    var content = passage.innerHTML;
+    var replacedContent = content.replace(/<br>/g, '<tw-consecutive-br></tw-consecutive-br>');
+    passage.innerHTML = replacedContent;
+  });
+}
+
+// Execute the function after the Twine document has loaded
+window.onload = function() {
+  replaceLineBreaks();
+};
+</script><tw-tag name="Intro/Outro" color="blue"></tw-tag><tw-tag name="1-Export-Readiness" color="red"></tw-tag><tw-tag name="2-Point-of-Export" color="orange"></tw-tag><tw-tag name="3-Point-of-Import" color="green"></tw-tag><tw-passagedata pid="1" name="Alt Market Selection" tags="1-Export-Readiness Intro/Outro" position="125,550" size="100,100">[
 Great choice! You&#39;ve chose to export to Sarvahara which is an established market for $Product imports!]
 
 
