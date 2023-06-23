@@ -148,7 +148,7 @@ tw-story[tags~="Help"] {background-image:url("https://www.linkpicture.com/q/3872
   background-size: 100%
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Function to replace <br> tags with <tw-consecutive-br></tw-consecutive-br>
 function replaceLineBreaks() {
-  var passages = document.querySelectorAll('tw-passage, tw-story');
+  var passages = document.querySelectorAll('tw-passage, tw-story,tw-hook');
 
   passages.forEach(function(passage) {
     var content = passage.innerHTML;
@@ -4036,7 +4036,7 @@ Buying insurance can be very helpful to protect you since there there are many u
 
 {[$NextButtonFormat[Back]
 (click-goto:&quot;Back&quot;, &#39;Ready to Import&#39;)]
-(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]A
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]
 Can you navigate the complexities of international trade to successfully export a product on time and within budget?
 
 
