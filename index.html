@@ -9,12 +9,12 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Trade Trail.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story, tw-passage {
-    white-space: pre-wrap; /* Preserve white spaces and line breaks */
+<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage p {
+    margin-bottom: 2em; /* Add margin at the bottom of each paragraph */
 }
 
-tw-story p:not(:last-child), tw-passage p:not(:last-child) {
-    margin-bottom: 1em; /* Add margin at the bottom of each paragraph */
+tw-passage p:last-child {
+    margin-bottom: 2em; /* Remove margin for the last paragraph */
 }
 
 
@@ -4036,7 +4036,7 @@ Buying insurance can be very helpful to protect you since there there are many u
 
 {[$NextButtonFormat[Back]
 (click-goto:&quot;Back&quot;, &#39;Ready to Import&#39;)]
-(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]A
 Can you navigate the complexities of international trade to successfully export a product on time and within budget?
 
 
