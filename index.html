@@ -9,13 +9,35 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Trade Trail.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage p {
+<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">// Function to replace <br> tags with <tw-consecutive-br></tw-consecutive-br>
+function replaceLineBreaks() {
+  var passages = document.querySelectorAll('tw-passage, tw-story,tw-hook');
+
+  passages.forEach(function(passage) {
+    var content = passage.innerHTML;
+    var replacedContent = content.replace(/<br>/, '<tw-consecutive-br></tw-consecutive-br>');
+    passage.innerHTML = replacedContent;
+  });
+}
+
+// Execute the function after the Twine document has loaded
+window.addEventListener('DOMContentLoaded', function() {
+  replaceLineBreaks();
+});
+
+
+tw-passage p {
     margin-bottom: 2em; /* Add margin at the bottom of each paragraph */
 }
 
-tw-passage p:last-child {
+tw-hook p{
     margin-bottom: 2em; /* Remove margin for the last paragraph */
 }
+
+tw-story p{
+    margin-bottom: 2em; /* Remove margin for the last paragraph */
+}
+
 
 
 .status-bar {
@@ -152,7 +174,7 @@ function replaceLineBreaks() {
 
   passages.forEach(function(passage) {
     var content = passage.innerHTML;
-    var replacedContent = content.replace(/<br>/g, '<tw-consecutive-br></tw-consecutive-br>');
+    var replacedContent = content.replace(/<br>/, '<tw-consecutive-br></tw-consecutive-br>');
     passage.innerHTML = replacedContent;
   });
 }
