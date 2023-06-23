@@ -371,6 +371,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/table&gt;
 ]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Business Registration Cost&#39;)]
 (box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Business Registration&#39;)]]}</tw-passagedata><tw-passagedata pid="3" name="Business Registration Cost" tags="1-Export-Readiness" position="300,850" size="100,100">(if:$Registration is &quot;Local&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 4)(set:num-type _Cost2 to 0)(set:num-type _Cost3 to 10)(set:num-type _TimeCost1 to 4)(set:num-type _TimeCost2 to 0)(set:num-type _TimeCost3 to 1)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Marketing&quot;)]
@@ -609,6 +610,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/table&gt;
 ]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Conveyance Cost&#39;)]
 (box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Conveyance&#39;)]]
@@ -664,6 +666,7 @@ You have found the correct HS code for &#39;&#39;$Product&#39;&#39;!  Now custom
 Congratulations!
 
 You have found the correct HS code for &#39;&#39;$Product&#39;&#39;!  Now customs authorities can identify your products.]\
+
 
 [$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Conveyance&#39;)]
@@ -827,6 +830,7 @@ th, td {
 &lt;/table&gt;
 ]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Courier Cost&#39;)]
 (box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Courier&#39;)]]
@@ -880,6 +884,7 @@ Since you included your global registration number, the customs office was able 
 $NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Inspection&#39;)]\
 (if:$Registration is &quot;Local&quot;)[Since you included your business registration number, the customs office was able to process your declaration in only 1 day.(set: $Time to ($Time + 1))
+
 
 $NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Inspection&#39;)]\
@@ -1117,6 +1122,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/table&gt;
 ]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Customs Option Cost&#39;)]
 (box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Customs Option&#39;)]]
@@ -1231,6 +1237,7 @@ Make sure to remember it or write it down.\
 &#39;&#39;Time:(border:&#39;solid&#39;)(meter: bind $Time, 45, &quot;X&quot;, &quot;$Time&quot;, (gradient: 0, 0, blue , 0.5, cyan, 0.75, yellow, 1, red))&#39;&#39;]]]\
 (if: $ImportCountry is &quot;Kujuma&quot;)[The Kujuma customs officials have assessed that your product is subject to 15% VAT which needs to be paid before your goods can be released.(set: $Funds to (round:($Funds - 0.15*$Revenue)))]
 (if: $ImportCountry is not &quot;Kujuma&quot;)[(goto: &quot;Courier&quot;)]\
+
 
 [$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Courier&#39;)]
@@ -1487,6 +1494,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/tbody&gt;    
 &lt;/table&gt;
 ]\
+
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Financial Instrument Cost&#39;)]
@@ -1999,6 +2007,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/table&gt;
 ]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Fundraising Cost&#39;)]
 (box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Fundraising&#39;)]]}</tw-passagedata><tw-passagedata pid="19" name="Fundraising Cost" tags="2-Point-of-Export Finance" position="1000,550" size="100,100">(if:$ExportCountry is &quot;Kujuma&quot;)[(append: ?SideBar)[(align:&quot;&lt;==&quot;)+(box:&quot;X&quot;)+(corner-radius:12)+(background:white)+(opacity:0.9)[&#39;&#39;Export Market:&#39;&#39; $ExportCountry
@@ -2138,6 +2147,7 @@ tbody tr:hover {background-color: #D6EEEE;}
     &lt;/tr&gt;
 &lt;/tbody&gt;    
 &lt;/table&gt;]\
+
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;HSCodeLookup&#39;)]
@@ -2796,6 +2806,7 @@ th, td {
 &lt;/tbody&gt;    
 &lt;/table&gt;]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Insurance Cost&#39;)]
 (if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]
@@ -3164,6 +3175,7 @@ The administrative fees to file these documents cost $2500 which will be deducte
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;}]\
+
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;I have picked all that I need!&#39;)]
@@ -3575,6 +3587,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/table&gt;
 ]\
 
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Marketing Cost&#39;)]
 (box:&quot;====X&quot;)[$HelpFormat[Help(click-goto:&quot;Help&quot;, &#39;Help Marketing&#39;)]]}</tw-passagedata><tw-passagedata pid="47" name="Marketing Cost" tags="1-Export-Readiness" position="300,1000" size="100,100">(if:$Marketing is &quot;TPA&quot;)+(if:$ExportCountry is &quot;Kujuma&quot;)[(set: num-type _Cost1 to 3)(set:num-type _Cost2 to 1)(set:num-type _Cost3 to 4)(set:num-type _TimeCost1 to 1)(set:num-type _TimeCost2 to 3)(set:num-type _TimeCost3 to 0)(set: $Time to ($Time+ _TimeCost1))(set: $Funds to ($Funds - _Cost1))(goto: &quot;Ready to Export&quot;)]
@@ -3960,6 +3973,8 @@ Because you have choosen an open account contract, there is no formal arbitratio
 (if:$Finance is &quot;Loan&quot; and $LoanDisbursement is not 0)[You delivered the product to your customer and the customer paid you in full. 
 Now that you have received payment from your customer, you need to repay your loan with interest. Including the interest rate of $InterestRate%, the total repayment amount is $$LoanRepayment.]\
 (if:$Finance is &quot;Prepay&quot; )[You delivered the product to your customer and the customer paid you all of the remaining amount of  $(print:$Revenue - $PrepayDisbursement).]\
+
+
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Summary&#39;)]}
 (if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]</tw-passagedata><tw-passagedata pid="55" name="Second Feedback" tags="Help" position="1400,400" size="100,100">{&lt;!-- Google tag (gtag.js) --&gt;
@@ -4081,6 +4096,7 @@ You successfully completed your export. Let&#39;s review your journey.
 In  the meantime, customers in $ImportCountry really appreciate the sustainable approach to packaging. They leave a good review and reward you with $100 to thank you for saving the planet.(set:$FinalRevenue to $FinalRevenue+100)]\
 (if:$Standards is &quot;Packaging&quot;)+(if:$ImportCountry is not &quot;Luminaria&quot;)[
 It was a responsible idea to use recycled packaging, but unfortunately there is no market demand in $ImportCountry for recycled packaging. Therefore, your efforts did not increase your revenue, but the planet thanks you for your efforts!]\
+
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;Point Converter&#39;)]
@@ -4324,6 +4340,7 @@ tbody tr:hover {background-color: #D6EEEE;}
 &lt;/tbody&gt;    
 &lt;/table&gt;
 ]\
+
 
 {[$NextButtonFormat[Next Step]
 (click-goto:&quot;Next Step&quot;, &#39;VSS Cost&#39;)]
