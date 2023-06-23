@@ -174,7 +174,7 @@ function replaceLineBreaks() {
 
   passages.forEach(function(passage) {
     var content = passage.innerHTML;
-    var replacedContent = content.replace(/<br>/, '<tw-consecutive-br></tw-consecutive-br>');
+    var replacedContent = content.replace('<br>', '<tw-consecutive-br></tw-consecutive-br>');
     passage.innerHTML = replacedContent;
   });
 }
