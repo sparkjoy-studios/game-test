@@ -14,12 +14,15 @@
   border-radius: 5px;
 }
 
+var n=str.replace(<br>,"/<br><br>/");
+
+
 tw-story {
   background-color: white;
   color: black;
   font-family: 'MetricWeb', sans-serif;
   font-size: 18px;
- white-space: break-spaces;
+white-space: pre-wrap;
 }
 
 tw-dialog {
@@ -51,8 +54,12 @@ tw-passage{
 	background-color: rgba(255,255,255, 0.9);
   padding: 10px;
     padding-left: 30px;
-  border-radius: 12px;
-  white-space: break-spaces;
+  border-radius: 12px;}
+
+tw-story tw-consecutive-br {
+    display: block;
+    height: 1.6ex;
+    visibility: hidden;
 }
 
 tw-sidebar{
@@ -3998,12 +4005,13 @@ Buying insurance can be very helpful to protect you since there there are many u
 
 {[$NextButtonFormat[Back]
 (click-goto:&quot;Back&quot;, &#39;Ready to Import&#39;)]
-(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]
-			Can you navigate the complexities of international trade to successfully export a product on time and within budget?
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">AAA
+###[Goal]
+Can you navigate the complexities of international trade to successfully export a product on time and within budget?
 
 
 ###[Game Objective]
-			The objective of this game is to familiarize you with some of the processes and challenges associated with exporting.
+The objective of this game is to familiarize you with some of the processes and challenges associated with exporting.
 
 Click the button below to learn firsthand about this process and start your exporting journey.
 
