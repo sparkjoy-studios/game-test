@@ -9,18 +9,14 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Trade Trail.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage, tw-hook {
+<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story, tw-passage {
     white-space: pre-wrap; /* Preserve white spaces and line breaks */
 }
 
-tw-passage br, tw-hook br {
-    display: none; /* Hide the <br> tags */
+tw-story p:not(:last-child), tw-passage p:not(:last-child) {
+    margin-bottom: 1em; /* Add margin at the bottom of each paragraph */
 }
 
-tw-passage::after, tw-hook::after {
-    content: '\A'; /* Insert a line break after each passage or hook */
-    white-space: pre; /* Preserve the line break */
-}
 
 .status-bar {
   border: solid 2px black;
