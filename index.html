@@ -156,7 +156,7 @@ tw-story[tags~="Help"] {background-image:url("https://www.linkpicture.com/q/3872
   background-size: 100%
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Function to replace <br> tags with <tw-consecutive-br></tw-consecutive-br>
 function replaceLineBreaks() {
-  var passages = document.querySelectorAll('tw-passage');
+  var passages = document.querySelectorAll('tw-passage, tw-story');
 
   passages.forEach(function(passage) {
     var content = passage.innerHTML;
@@ -166,9 +166,9 @@ function replaceLineBreaks() {
 }
 
 // Execute the function after the Twine document has loaded
-window.onload = function() {
+window.addEventListener('DOMContentLoaded', function() {
   replaceLineBreaks();
-};
+});
 </script><tw-tag name="Intro/Outro" color="blue"></tw-tag><tw-tag name="1-Export-Readiness" color="red"></tw-tag><tw-tag name="2-Point-of-Export" color="orange"></tw-tag><tw-tag name="3-Point-of-Import" color="green"></tw-tag><tw-passagedata pid="1" name="Alt Market Selection" tags="1-Export-Readiness Intro/Outro" position="125,550" size="100,100">[
 Great choice! You&#39;ve chose to export to Sarvahara which is an established market for $Product imports!]
 
@@ -4044,7 +4044,7 @@ Buying insurance can be very helpful to protect you since there there are many u
 
 {[$NextButtonFormat[Back]
 (click-goto:&quot;Back&quot;, &#39;Ready to Import&#39;)]
-(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]AA
+(if: $Time &gt; 45 or $Funds &lt; 0)[(goto:&#39;Game Over&#39;)]}</tw-passagedata><tw-passagedata pid="56" name="Start" tags="Intro/Outro" position="275,100" size="100,100">###[Goal]
 Can you navigate the complexities of international trade to successfully export a product on time and within budget?
 
 
