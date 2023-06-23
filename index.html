@@ -9,22 +9,18 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Trade Trail.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">// Function to replace <br> tags with <tw-consecutive-br></tw-consecutive-br>
-function replaceLineBreaks() {
-  var passages = document.querySelectorAll('tw-passage');
-
-  passages.forEach(function(passage) {
-    var content = passage.innerHTML;
-    var replacedContent = content.replace(/<br>/g, '<tw-consecutive-br></tw-consecutive-br>');
-    passage.innerHTML = replacedContent;
-  });
+<tw-storydata name="Trade Trail" startnode="43" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="9C679BAD-49BA-4ED9-B7C5-F388610D4301" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage, tw-hook {
+    white-space: pre-wrap; /* Preserve white spaces and line breaks */
 }
 
-// Execute the function after the Twine document has loaded
-window.onload = function() {
-  replaceLineBreaks();
-};
+tw-passage br, tw-hook br {
+    display: none; /* Hide the <br> tags */
+}
 
+tw-passage::after, tw-hook::after {
+    content: '\A'; /* Insert a line break after each passage or hook */
+    white-space: pre; /* Preserve the line break */
+}
 
 .status-bar {
   border: solid 2px black;
